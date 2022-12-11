@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="system" method="upgrade">
+	<name>System - Articles Calendar</name>
+	<author>Andrey Miasoedov</author>
+	<creationDate>March 2022</creationDate>
+	<authorEmail>molotow11@gmail.com</authorEmail>
+	<authorUrl>http://joomcar.net</authorUrl>
+	<version>1.0.1</version>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<files>
+		<filename plugin="articlescalendar">articlescalendar.php</filename>
+		<filename>index.html</filename>
+		<folder>models</folder>
+		<folder>template</folder>
+		<folder>view</folder>
+	</files>
+</extension>

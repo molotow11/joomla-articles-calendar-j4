@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>Articles - Calendar</name>
+	<author>JoomCar Extensions</author>
+	<creationDate>July 2020</creationDate>
+	<copyright></copyright>
+	<authorEmail>molotow11@gmail.com</authorEmail>
+	<authorUrl>http://joomcar.net</authorUrl>
+	<version>1.0.1</version>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>Module for show articles in calendar by date</description>
+	<files>
+		<filename module="mod_articles_calendar">mod_articles_calendar.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>includes</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_articles_calendar.ini</language>
+	</languages>
+  	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_articles_calendar/includes/">
+				<field name="" type="header" default="MOD_AGS_MAIN_PARAMS_HEADER" label="" description=""/>
+				
+					<field name="moduleclass_sfx" type="text" default="" label="MOD_AGS_MODULE_CLASS_SUFFIX" description="MOD_AGS_PARAMMODULECLASSSUFFIX" />
+					
+					<field name="uiTheme" type="list" default="redmond" label="MOD_AGS_UITHEME">
+						<option value="ui-lightness">lightness</option>
+						<option value="smoothness">smoothness</option>
+						<option value="ui-darkness">darkness</option>
+						<option value="cupertino">cupertino</option>
+						<option value="flick">flick</option>
+						<option value="humanity">humanity</option>
+						<option value="redmond">redmond</option>
+					</field>
+					
+					<field name="Language" type="list" default="en-GB" label="MOD_AGS_LANGUAGE">
+						<option value="en-GB">English</option>
+						<option value="ru">Russian</option>
+						<option value="fr">French</option>
+						<option value="it">Italian</option>
+						<option value="es">Spanish</option>
+						<option value="zh-CN">Chinese</option>
+						<option value="pl">Polish</option>
+						<option value="el">Greek</option>
+						<option value="pt-BR">Portuguese, Brazilian</option>
+					</field>
+				
+				<field name="" type="header" default="MOD_AGS_SEARCH_PARAMS_HEADER" label="" description=""/>
+				
+					<field name="date_field" type="selectfield" class="btn-group" label="MOD_AGS_DATE_FIELD" description="MOD_AGS_DATE_FIELD_DESC" />
+					<field name="restcat" type="categoryselect" default="" label="MOD_AGS_RESTRICTION_CATEGORY" />
+					<field name="Itemid" type="menuitem" default="" label="MOD_AGS_LISTING_ITEMID"><option value="">JDEFAULT</option></field>
+				
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="cache" type="list" default="1" label="MOD_AGS_CACHING">
+					<option value="1">MOD_AGS_USE_GLOBAL</option>
+					<option value="0">MOD_AGS_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="MOD_AGS_CACHE_TIME_LABEL" />
+			</fieldset>
+		</fields>
+	</config>	  
+</extension>

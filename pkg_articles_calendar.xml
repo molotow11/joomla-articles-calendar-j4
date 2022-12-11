@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<extension type="package" version="3.0" method="upgrade">
+	<name>Articles Calendar Package</name>
+	<author>Andrey Miasoedov</author>
+	<creationDate>July 2020</creationDate>
+	<packagename>articles_calendar</packagename>
+	<version>1.0.1</version>
+	<packager>Joomcar Team</packager>
+	<packagerurl>http://joomcar.net</packagerurl>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<scriptfile>pkg_script.php</scriptfile>
+	<files>
+		<file type="module" id="mod_articles_calendar" client="site">mod_articles_calendar.zip</file>
+		<file type="plugin" id="plg_articles_calendar" group="system">plg_articles_calendar.zip</file>
+	</files>
+	<updateservers>
+		<server name="Articles Calendar Package" type="collection">http://joomcar.net/jed_update/joomla_articles_calendar/package.xml</server>
+	</updateservers>
+</extension>
