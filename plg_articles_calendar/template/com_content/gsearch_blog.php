@@ -13,11 +13,11 @@ $document = JFactory::getDocument();
 $lang = JFactory::getLanguage();
 $lang->load("mod_articles_calendar");
 
-require_once(JPATH_SITE . "/plugins/system/plg_articles_calendar/models/com_content/model.php");
+require_once(JPATH_SITE . "/plugins/system/articlescalendar/models/com_content/model.php");
 $model = new ArticlesModelCalendar;
 
-$model->limit = JRequest::getInt("limit", 10); //set items per page;
-$columns = JRequest::getInt('columned', 1);
+$model->limit = JFactory::getApplication()->input->getInt("limit", 10); //set items per page;
+$columns = JFactory::getApplication()->input->getInt('columned', 1);
 
 $items = $model->getItems();
 

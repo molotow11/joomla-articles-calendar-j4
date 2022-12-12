@@ -12,7 +12,7 @@ defined('_JEXEC') or die('Restricted access');
 
 class modArticlesCalendarHelper {
 
-	function getModuleParams($id, $native = false) {
+	public static function getModuleParams($id, $native = false) {
 		if(!$id) return;
 		$db = JFactory::getDBO();
 		$query = "SELECT * FROM #__modules WHERE id = {$id}";

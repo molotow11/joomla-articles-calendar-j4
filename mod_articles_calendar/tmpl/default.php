@@ -61,8 +61,8 @@ defined('_JEXEC') or die;
 			}
 
 			if($day != '') {
-				$date = DateTime::createFromFormat("Y-n", $day);
-				$date_initial = $date->format("Y-n");
+				$date = DateTime::createFromFormat("Y-n-j", $day);
+				$date_initial = $date->format("Y-n-j");
 				$date_default = $day;
 			}
 		?>

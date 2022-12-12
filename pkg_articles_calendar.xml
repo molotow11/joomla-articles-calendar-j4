@@ -2,7 +2,7 @@
 	<extension type="package" version="3.0" method="upgrade">
 	<name>Articles Calendar Package</name>
 	<author>Andrey Miasoedov</author>
-	<creationDate>July 2020</creationDate>
+	<creationDate>Dec 2022</creationDate>
 	<packagename>articles_calendar</packagename>
 	<version>1.0.1</version>
 	<packager>Joomcar Team</packager>

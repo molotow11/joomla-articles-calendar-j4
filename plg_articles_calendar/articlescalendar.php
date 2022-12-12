@@ -27,7 +27,7 @@ class plgSystemArticlesCalendar extends CMSPlugin {
 			$doc = JFactory::getDocument();
 			
 			$search_type = "com_content";
-			$format = JFactory::getApplication()->input->getWord("search_mode");
+			$format = JFactory::getApplication()->input->getWord("search_mode", "html");
 			switch($search_type) {
 				case "com_content" :
 					require_once(dirname(__FILE__)."/view/com_content/view.{$format}.php");

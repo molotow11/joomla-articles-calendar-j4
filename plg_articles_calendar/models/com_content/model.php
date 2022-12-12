@@ -220,7 +220,7 @@ class ArticlesModelCalendar extends JModelList {
 		if($_REQUEST['created']
 			AND explode("-", $_REQUEST['created']) != ""
 		) {
-			$date_search = new DateTime($this->input->getVar("created"), $timezone);
+			$date_search = new DateTime($_REQUEST['created'], $timezone);
 			$query_params = $date_search->format('Y-m-d');
 			$query .= " AND i.created LIKE '%{$query_params}%'";
 		}
@@ -289,27 +289,26 @@ class ArticlesModelCalendar extends JModelList {
 	function execPlugins(&$item) {
 		$app = JFactory::getApplication('site');
 		$params = $app->getParams();
-		$dispatcher = JEventDispatcher::getInstance();
 		$item->event   = new stdClass;
 
 		// Old plugins: Ensure that text property is available
 		$item->text = $item->introtext;
 		
 		JPluginHelper::importPlugin('content');
-		$dispatcher->trigger('onContentPrepare', array ('com_content.category', &$item, &$item->params, 0));
+		\Joomla\CMS\Factory::getApplication()->triggerEvent('onContentPrepare', array ('com_content.category', &$item, &$item->params, 0));
 
 		// Old plugins: Use processed text as introtext
 		$item->introtext = $item->text;
 		
 		$item->params = new JRegistry($item->attribs);
 		
-		$results = $dispatcher->trigger('onContentBeforeDisplay', array('com_content.category', &$item, &$item->params, 0));
+		$results = \Joomla\CMS\Factory::getApplication()->triggerEvent('onContentBeforeDisplay', array('com_content.category', &$item, &$item->params, 0));
 		$item->event->beforeDisplayContent = trim(implode("\n", $results));
 		
-		$results = $dispatcher->trigger('onContentAfterTitle', array('com_content.category', &$item, &$item->params, 0));
+		$results = \Joomla\CMS\Factory::getApplication()->triggerEvent('onContentAfterTitle', array('com_content.category', &$item, &$item->params, 0));
 		$item->event->afterDisplayTitle = trim(implode("\n", $results));
 
-		$results = $dispatcher->trigger('onContentAfterDisplay', array('com_content.category', &$item, &$item->params, 0));
+		$results = \Joomla\CMS\Factory::getApplication()->triggerEvent('onContentAfterDisplay', array('com_content.category', &$item, &$item->params, 0));
 		$item->event->afterDisplayContent = trim(implode("\n", $results));
 	}
 	

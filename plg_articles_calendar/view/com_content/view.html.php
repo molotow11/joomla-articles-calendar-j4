@@ -21,7 +21,7 @@ class ArticlesViewCalendar extends JViewCategory {
 		}
 		else {
 			ob_start();
-				require(JPATH_SITE . "/plugins/system/plg_articles_calendar/template/com_content/gsearch_blog.php");
+				require(JPATH_SITE . "/plugins/system/articlescalendar/template/com_content/gsearch_blog.php");
 				$return = ob_get_contents();
 			ob_end_clean();
 		}
