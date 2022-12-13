@@ -234,10 +234,10 @@ class ArticlesModelCalendar extends JModelList {
 		//fields search
 		require_once(JPATH_BASE . '/modules/mod_articles_calendar/helper.php');
 		$module_helper = new modArticlesCalendarHelper;
-		foreach($_GET as $param=>$value) {
+		foreach($_REQUEST as $param=>$value) {
 			preg_match('/^field([0-9]+)$/', $param, $matches);
 			$field_id = $matches[1];
-			$query_params = $this->input->getVar("field{$field_id}");
+			$query_params = $_REQUEST["field{$field_id}"];
 			
 			$sub_query = "SELECT DISTINCT item_id FROM #__fields_values WHERE 1";
 			
