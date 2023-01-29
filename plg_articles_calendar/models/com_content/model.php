@@ -225,8 +225,8 @@ class ArticlesModelCalendar extends JModelList {
 			$query .= " AND i.created LIKE '%{$query_params}%'";
 		}
 		
-		if($this->input->getVar("publish_up")) {
-			$date_search = new DateTime($this->input->getVar("publish_up"), $timezone);
+		if($_REQUEST["publish_up"]) {
+			$date_search = new DateTime($_REQUEST["publish_up"], $timezone);
 			$query_params = $date_search->format('Y-m-d');
 			$query .= " AND i.created LIKE '%{$query_params}%'";
 		}
@@ -265,7 +265,7 @@ class ArticlesModelCalendar extends JModelList {
 				}
 			}
 		}
-
+		
 		return $query;
 	}
 	

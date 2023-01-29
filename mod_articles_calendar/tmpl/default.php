@@ -59,11 +59,15 @@ defined('_JEXEC') or die;
 					$day = $_GET[array_keys($_GET)[$i + 1]]; //next parameter after calendar
 				}
 			}
-
-			if($day != '') {
-				$date = DateTime::createFromFormat("Y-n-j", $day);
-				$date_initial = $date->format("Y-n-j");
-				$date_default = $day;
+			if($day) {
+				try {
+					$date = DateTime::createFromFormat("Y-n-j", $day);
+					$date_initial = $date->format("Y-n-j");
+					$date_default = $day;	
+				}
+				catch (error) {
+					// do nothing
+				}
 			}
 		?>
 		var year_month = "<?php echo $date_initial; ?>";
